@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/create-payment", "dest": "/api/create-payment.js" },
+    { "src": "/api/check-payment", "dest": "/api/check-payment.js" },
+    { "src": "/api/payment-webhook", "dest": "/api/payment-webhook.js" },
+    { "src": "/api/send-sms", "dest": "/api/send-sms.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
